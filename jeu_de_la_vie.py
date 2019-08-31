@@ -6,8 +6,8 @@ def evolution():
     for x in range(hauteur):
         for y in range(largeur):
             nb=0
-            # tests de presence de cellules
-            # le bord est considere comme un obstacle infranchissable
+            # tests de présence de cellules
+            # le bord est considéré comme un obstacle infranchissable
             if x<hauteur-1:
                 if cellules[x+1][y]==1: nb+=1
                 if y<hauteur-1 and cellules[x+1][y+1]==1: nb+=1
@@ -18,6 +18,7 @@ def evolution():
             if y>0 and cellules[x][y-1]==1: nb+=1
             if x<hauteur-1 and y>0 and cellules[x+1][y-1]==1: nb+=1
             if x>0 and y<largeur-1 and cellules[x-1][y+1]==1: nb+=1
+
             # seulement les tests qui changent la valeur d'une cellule
             if cellules[x][y]==0 and nb==3: suivant[x][y]=1
             elif cellules[x][y]==1 and nb not in [2,3]: suivant[x][y]=0
@@ -28,7 +29,7 @@ def evolutionGraphique():
     updateGraphique()
 
 def updateGraphique():
-    # on efface tout, puis on remet cases par case
+    # on efface tout, puis on remet les cases cellule par cellule
     canvas.delete("all")
     for x in range(hauteur):
         for y in range(largeur):
@@ -37,6 +38,7 @@ def updateGraphique():
 
 def ajouterCellule(event):
     global cellules
+    # coordonnees cellule correspondant au clic
     x=event.x//cote
     y=event.y//cote
     cellules[x][y]=(cellules[x][y]+1)%2 # alterne entre 0 et 1
