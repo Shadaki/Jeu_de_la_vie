@@ -44,9 +44,9 @@ def ajouterCellule(event):
     cellules[x][y]=(cellules[x][y]+1)%2 # alterne entre 0 et 1
     updateGraphique()
 
-largeur=30 #int(input("Largeur de la fenêtre en cellules : "))
-hauteur=30 #int(input("Hauteur de la fenêtre en cellules : "))
-cote=20 #int(input("Côté d'une cellule en pixels : "))
+largeur=100 #int(input("Largeur de la fenêtre en cellules : "))
+hauteur=100 #int(input("Hauteur de la fenêtre en cellules : "))
+cote=5 #int(input("Côté d'une cellule en pixels : "))
 larFen=largeur*cote
 hautFen=hauteur*cote
 cellules=[[0 for y in range(largeur)] for x in range(hauteur)]
@@ -54,7 +54,7 @@ cellules=[[0 for y in range(largeur)] for x in range(hauteur)]
 fen=Tk()
 fen.title("Jeu de la vie")
 fen.geometry(str(larFen)+"x"+str(hautFen+50))
-fen.resizable(width=False,height=False)
+#fen.resizable(width=False,height=False)
 canvas=Canvas(fen,bg="white",width=larFen,height=hautFen)
 canvas.place(x=0,y=0)
 canvas.bind("<ButtonPress-1>",ajouterCellule)
