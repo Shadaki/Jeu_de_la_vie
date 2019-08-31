@@ -44,9 +44,9 @@ def ajouterCellule(event):
     cellules[x][y]=(cellules[x][y]+1)%2 # alterne entre 0 et 1
     updateGraphique()
 
-largeur=int(input("Largeur de la fenêtre en cellules : "))
-hauteur=int(input("Hauteur de la fenêtre en cellules : "))
-cote=int(input("Taille du côté d'une cellule : "))
+largeur=30 #int(input("Largeur de la fenêtre en cellules : "))
+hauteur=30 #int(input("Hauteur de la fenêtre en cellules : "))
+cote=20 #int(input("Côté d'une cellule en pixels : "))
 larFen=largeur*cote
 hautFen=hauteur*cote
 cellules=[[0 for y in range(largeur)] for x in range(hauteur)]
