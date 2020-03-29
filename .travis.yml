@@ -1,5 +1,7 @@
 language: python
 python:
   - "3.6"
+install:
+  pip install tkinter
 script:
   python jeu_de_la_vie.py
