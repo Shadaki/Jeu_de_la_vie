@@ -2,6 +2,6 @@ language: python
 python:
   - "3.6"
 install:
-  pip install tkinter
+  sudo apt install python3-tk
 script:
   python jeu_de_la_vie.py
