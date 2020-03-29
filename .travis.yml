@@ -7,4 +7,5 @@ install:
 services:
   - xvfb
 script:
+  xvfb-run make test
   python jeu_de_la_vie.py
